@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Product from "../assets/Product"
+import Product from "../../public/assets/Product"
 import { ArchiveRestore, ArrowDownAZ, ChevronDown, MessagesSquare, Search, Settings, SlidersHorizontal, SquareArrowOutUpRight, SquarePlus, Trash, X } from 'lucide-react';
 
 const ContentPage = () => {
