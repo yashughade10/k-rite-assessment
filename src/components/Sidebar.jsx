@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, CircleHelp, Code, Folder, Megaphone, MessagesSquare, PenTool, Plus, SquarePlus, UserPlus } from 'lucide-react';
-import logo from '../../public/assets/images/Logo.png'
-import userLogo from '../../public/assets/images/members/6.avif'
+import logo from '/assets/images/Logo.png'
+import userLogo from '/assets/images/members/6.avif'
 
 const Sidebar = () => {
 
