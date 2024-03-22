@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import logo from '../assets/images/Logo.png'
-import userLogo from '../assets/images/members/6.avif'
 import { Code, Megaphone, MessagesSquare, PenTool, Plus, Search, Settings, SquarePlus } from 'lucide-react';
 import Product from "../assets/Product"
 import Sidebar from './Sidebar';

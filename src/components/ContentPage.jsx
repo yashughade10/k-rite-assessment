@@ -174,7 +174,7 @@ const ContentPage = () => {
                                                     className="form-checkbox h-4 w-4 accent-slate-950 text-black transition duration-150 ease-in-out"
                                                     onChange={() => handleCheckboxChange(product.id)}
                                                 />
-                                                <img src={"src/assets" + product.logo} className="h-8 me-2 ms-2 sm:h-8 rounded-lg" alt="Brand Logo" />
+                                                <img src={"public/assets" + product.logo} className="h-8 me-2 ms-2 sm:h-8 rounded-lg" alt="Brand Logo" />
                                                 <span className="flex-grow">{product.brand}</span>
                                                 <MessagesSquare className="h-4 w-4 sm:h-8 sm:w-8 md:w-7 md:h-7 lg:h-5 lg:w-6 p-1 border rounded-md text-gray-500 cursor-pointer hover:bg-gray-100" />
                                             </td>
@@ -190,7 +190,7 @@ const ContentPage = () => {
                                                 {product.memberImages.slice(0, 6).map((member, index) => (
                                                     <img
                                                         key={index}
-                                                        src={"src/assets" + member}
+                                                        src={"public/assets" + member}
                                                         className="absolute w-8 h-8 rounded-full border-2 border-white bg-gray-100 shadow-md -mt-4 ml-2"
                                                         style={{
                                                             left: index * 21 + 'px',
