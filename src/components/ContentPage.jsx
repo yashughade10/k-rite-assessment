@@ -153,13 +153,13 @@ const ContentPage = () => {
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Brand</th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t">Brand</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Description</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Members</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Categories</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Tags</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">Next Meeting</th>
-                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border">+</th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t">+</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200">
@@ -248,18 +248,18 @@ const ContentPage = () => {
                                                     {product.meeting.time}
                                                 </div>
                                             </td>
-                                            <td className="px-3 py-3 whitespace-wrap border"></td>
+                                            <td className="px-3 py-3 whitespace-wrap border-b"></td>
                                         </tr>
                                     ))}
 
                                     {/* Dynamic code for last row */}
                                     <tr>
                                         {lastRow.map((text, index) => (
-                                            <td key={index} className="px-3 py-3 whitespace-nowrap border">
+                                            <td key={index} className="px-3 py-3 whitespace-nowrap border-r border-b">
                                                 {text}
                                             </td>
                                         ))}
-                                        <td className="px-3 py-3 whitespace-nowrap border text-right"></td>
+                                        <td className="px-3 py-3 whitespace-nowrap border-b text-right"></td>
                                     </tr>
                                 </tbody>
                             </table>
