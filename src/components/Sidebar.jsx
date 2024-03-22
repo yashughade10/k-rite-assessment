@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CircleHelp, Code, Folder, Megaphone, MessagesSquare, PenTool, Plus, Search, Settings, SquarePlus, UserPlus } from 'lucide-react';
+import { ChevronDown, CircleHelp, Code, Folder, Megaphone, MessagesSquare, PenTool, Plus, SquarePlus, UserPlus } from 'lucide-react';
 import logo from '../../public/assets/images/Logo.png'
 import userLogo from '../../public/assets/images/members/6.avif'
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
         }
     };
 
-    // Function to toggle the hamburger for menu options
+    // Function to toggle the hamburger for menu options (Mobile devices)
     const toggleSidebar = () => {
         setIsHamburgerOpen(!isHamburgerOpen);
     };
@@ -36,7 +36,7 @@ const Sidebar = () => {
     return (
         <>
             <button type="button"
-                className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 onClick={toggleSidebar}>
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -47,14 +47,14 @@ const Sidebar = () => {
                 } sm:translate-x-0 border-2 sm:rounded-2xl rounded-r-lg mt-14 sm:m-4 bg-white`}>
                 <div class="h-full px-3 py-4 overflow-y-auto">
                     <a href="#" className="flex items-center justify-between ps-2.5 mb-5">
-                        <div className="flex items-center"> {/* Flex container for logo and text */}
+                        <div className="flex items-center">
                             <img src={logo} className="h-10 me-3 sm:h-10" alt="Flowbite Logo" />
                             <span className="self-center leading-4 font-semibold whitespace-nowrap dark:text-black">
                                 <p>INC</p>
                                 <p>InnovateHub</p>
                             </span>
                         </div>
-                        <img src={userLogo} className="h-8 w-8 sm:h-8 rounded-full" alt="User Logo" /> {/* User logo */}
+                        <img src={userLogo} className="h-8 w-8 sm:h-8 rounded-full" alt="User Logo" />
                     </a>
 
                     <ul class="space-y-2 font-medium">
@@ -99,17 +99,15 @@ const Sidebar = () => {
 
 
                         <div>
-                            <div className=' flex justify-between items-center'>
+                            <div className=' flex justify-between items-center mx-2'>
                                 <p>FOLDERS</p>
                                 <Plus size={20} />
                             </div>
                             <li>
-                                <button class="flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300 relative" onClick={() => toggleDropdown(1)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                <button class={`flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300 ${isOpen1 ? 'bg-gray-300' : ''}`} onClick={() => toggleDropdown(1)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <Folder size={20} />
                                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Products</span>
-                                    <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                                    </svg>
+                                    <ChevronDown size={20} className='ml-1' />
                                 </button>
                                 <ul id="dropdown-example" class="hidden py-2 space-y-2" className={`py-2 space-y-2 ${isOpen1 ? '' : 'hidden'}`}>
                                     <li>
@@ -139,12 +137,10 @@ const Sidebar = () => {
                                 </ul>
                             </li>
                             <li>
-                                <button class="flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300" onClick={() => toggleDropdown(2)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                <button class={`flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300 ${isOpen2 ? 'bg-gray-300' : ''}`} onClick={() => toggleDropdown(2)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <Folder size={20} />
                                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Sales</span>
-                                    <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                                    </svg>
+                                    <ChevronDown size={20} className='ml-1' />
                                 </button>
                                 <ul id="dropdown-example" class="hidden py-2 space-y-2" className={`py-2 space-y-2 ${isOpen2 ? '' : 'hidden'}`}>
                                     <li>
@@ -166,12 +162,10 @@ const Sidebar = () => {
                                 </ul>
                             </li>
                             <li>
-                                <button class="flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300" onClick={() => toggleDropdown(3)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                <button class={`flex items-center w-full p-2 text-base text-gray-900 rounded-lg dark:hover:bg-gray-300 ${isOpen3 ? 'bg-gray-300' : ''}`} onClick={() => toggleDropdown(3)} aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <Folder size={20} />
                                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Design</span>
-                                    <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                                    </svg>
+                                    <ChevronDown size={20} className='ml-1' />
                                 </button>
                                 <ul id="dropdown-example" class="hidden py-2 space-y-2" className={`py-2 space-y-2 ${isOpen3 ? '' : 'hidden'}`}>
                                     <li>

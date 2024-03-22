@@ -29,7 +29,8 @@ const Product = [
             text: '#58967a',
             border: '#58967a',
             background: '#daf5e2'
-        }
+        },
+        messages: 2
     },
     {
         id: 2,
@@ -133,7 +134,8 @@ const Product = [
             text: '#58967a',
             border: '#58967a',
             background: '#daf5e2'
-        }
+        },
+        messages: 7
     },
     {
         id: 5,
@@ -204,7 +206,8 @@ const Product = [
             text: '#58967a',
             border: '#58967a',
             background: '#daf5e2'
-        }
+        },
+        messages: 9
     },
     {
         id: 7,
@@ -244,7 +247,8 @@ const Product = [
             text: '#58967a',
             border: '#58967a',
             background: '#daf5e2'
-        }
+        },
+        messages: 5
     },
     {
         id: 8,
@@ -310,7 +314,8 @@ const Product = [
             text: '#af835e',
             border: '#fee6d3',
             background: '#fffcf3'
-        }
+        },
+        messages: 14
     },
     {
         id: 10,

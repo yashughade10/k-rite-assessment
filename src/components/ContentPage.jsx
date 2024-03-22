@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Product from "../assets/Product"
-import { ArchiveRestore, ArrowDownAZ, ArrowLeftRight, ChevronDown, Code, Megaphone, MessagesSquare, PenTool, Plus, Search, Settings, SlidersHorizontal, SquareArrowOutUpRight, SquarePlus, Trash, X } from 'lucide-react';
+import { ArchiveRestore, ArrowDownAZ, ChevronDown, MessagesSquare, Search, Settings, SlidersHorizontal, SquareArrowOutUpRight, SquarePlus, Trash, X } from 'lucide-react';
 
 const ContentPage = () => {
 
@@ -9,7 +9,7 @@ const ContentPage = () => {
     const [filteredProducts, setFilteredProducts] = useState(Product);
     const [sortedBy, setSortedBy] = useState(null);
 
-    // Data for the last column
+    // Data for the last row
     const lastRow = [
         <span className=' flex items-center ml-32' key="1"> <p className=' font-semibold mr-1'>10</p> count</span>,
         <span className=' flex items-center ml-14' key="1"><span className=' mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
@@ -19,7 +19,7 @@ const ContentPage = () => {
         ""
     ];
 
-    // Logic for search filter
+    // Function for search filter
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
         const filtered = Product.filter((product) => {
@@ -85,17 +85,17 @@ const ContentPage = () => {
                             <div className="relative mr-2 sm:mr-4">
                                 <input
                                     type="text"
-                                    className="bg-gray-100 border border-gray-300 rounded-lg pr-3 py-2 focus:outline-none focus:border-blue-500 w-32 sm:w-48 md:w-64 pl-10"
+                                    className="bg-gray-100 border border-gray-300 rounded-lg pr-3 py-2 focus:outline-none focus:border-gray-500 w-32 sm:w-48 md:w-64 pl-10"
                                     placeholder="Search"
                                     value={searchQuery}
                                     onChange={handleSearchChange}
                                 />
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-                                    <Search className="h-5 w-5 sm:h-6 sm:w-5 md:w-5 md:h-6 lg:h-8 lg:w-8 p-1  text-gray-500" />
+                                    <Search className="h-5 w-5 sm:h-6 sm:w-5 md:w-5 md:h-6 lg:h-8 lg:w-8 p-1 text-gray-500" />
                                 </div>
                             </div>
                             <MessagesSquare className="h-9 w-9 sm:h-8 sm:w-8 md:w-9 md:h-9 lg:h-9 lg:w-9 border p-2 rounded-md text-gray-500 cursor-pointer hover:bg-gray-100" />
-                            <Settings className="h-9 w-9 sm:h-8 sm:w-8 md:w-9    md:h-9 lg:h-9 lg:w-9 border rounded-md p-2 text-gray-500 cursor-pointer ml-2 sm:ml-4 hover:bg-gray-100" />
+                            <Settings className="h-9 w-9 sm:h-8 sm:w-8 md:w-9 md:h-9 lg:h-9 lg:w-9 border rounded-md p-2 text-gray-500 cursor-pointer ml-2 sm:ml-4 hover:bg-gray-100" />
                         </div>
                     </div>
 
@@ -104,6 +104,7 @@ const ContentPage = () => {
                     <div className="flex flex-col sm:flex-row justify-between p-3">
                         <div className="flex flex-wrap items-center sm:mb-0 mb-2">
                             {/* Dropdowns for brands, desks, tags */}
+
                             <select className="bg-white border border-gray-300 rounded-md px-3 py-1 focus:outline-none mr-2 mb-2 sm:mb-2 hover:bg-gray-100 cursor-pointer">
                                 {/* Data according to the brands */}
                                 <option value="">Brands</option>
@@ -113,7 +114,6 @@ const ContentPage = () => {
                                     </option>
                                 ))}
                             </select>
-
                             <select className="bg-white  border border-gray-300 rounded-md px-3 py-1 focus:outline-none mr-2 mb-2 sm:mb-2 hover:bg-gray-100 cursor-pointer">
                                 <option value="">Desks</option>
                                 <option value="">Desk-1</option>
@@ -121,7 +121,6 @@ const ContentPage = () => {
                                 <option value="">Desk-3</option>
                                 <option value="">Desk-4</option>
                             </select>
-
                             <select className="bg-white border border-gray-300 rounded-md px-3 py-1 focus:outline-none mr-2 mb-2 sm:mb-2 w-36 hover:bg-gray-100 cursor-pointer">
                                 {/* Data of tags from product.js by removing and make every tag seperate */}
                                 <option value="">Tags</option>
@@ -139,7 +138,7 @@ const ContentPage = () => {
                             <button className="px-3 border py-1 rounded-md mr-2 mb-2 sm:mb-2 hover:bg-gray-100 flex items-center" onClick={handleSort}><ArrowDownAZ className='mr-1' size={16} />Sort</button>
                             <button className="border px-3 py-1 rounded-md mr-2 mb-2 sm:mb-2 hover:bg-gray-100 flex items-center"><SlidersHorizontal className='mr-1' size={16} />Filter</button>
                         </div>
-                        {/* Meeting and Import/Export Button */}
+                        {/* Meeting and Import/Export Buttons */}
                         <div className='flex'>
                             <button className="border hover:bg-gray-100 text-gray-700 px-3 py-1 rounded-md mr-2 mb-2 sm:mb-2 flex items-center"><SquarePlus size={16} className='mr-1' />Meeting</button>
                             <button className="border hover:bg-gray-100 text-gray-700 px-3 py-1 rounded-md mr-2 mb-2 sm:mb-2 flex items-center"><SquareArrowOutUpRight size={16} className='mr-1' />Import/Export</button>
@@ -176,8 +175,14 @@ const ContentPage = () => {
                                                 />
                                                 <img src={"public/assets" + product.logo} className="h-8 me-2 ms-2 sm:h-8 rounded-lg" alt="Brand Logo" />
                                                 <span className="flex-grow">{product.brand}</span>
-                                                <MessagesSquare className="h-4 w-4 sm:h-8 sm:w-8 md:w-7 md:h-7 lg:h-5 lg:w-6 p-1 border rounded-md text-gray-500 cursor-pointer hover:bg-gray-100" />
+                                                {product.messages && product.messages > 0 && (
+                                                    <div className="flex items-center ml-2">
+                                                        <MessagesSquare className="h-4 w-4 sm:h-8 sm:w-8 md:w-7 md:h-7 lg:h-5 lg:w-6 p-1 rounded-md text-gray-500 cursor-pointer hover:bg-gray-100" />
+                                                        <span className="text-gray-500 text-xs">{product.messages}</span>
+                                                    </div>
+                                                )}
                                             </td>
+
 
                                             {/* Description column */}
                                             <td className="px-3 py-3 whitespace-nowrap border overflow-hidden">
@@ -261,13 +266,13 @@ const ContentPage = () => {
                         </div>
 
                         {/* Bottom Items/Navbar Structure */}
-                        <div className="flex justify-center mt-10 mb-2 md:mt-40"> {/* Adjust margin top for different screen sizes */}
-                            <div className="bg-white rounded-lg shadow-md py-2 border-gray-300 border-2 px-1 flex flex-wrap items-center justify-between max-w-lg w-full md:max-w-sm"> {/* Adjust max width for different screen sizes */}
+                        <div className="flex justify-center mt-10 mb-2 md:mt-40">
+                            <div className="bg-white rounded-lg shadow-md py-2 border-gray-300 border-2 px-1 flex flex-wrap items-center justify-between max-w-lg w-full md:max-w-sm">
                                 <span className="text-gray-600 font-medium p-1 mr-1 cursor-pointer">
                                     <span className='bg-black text-white px-1.5 rounded-md mr-1'>{countSelectedItems()}</span>Selected
                                 </span>
-                                <span className="text-gray-600 font-medium border-2 rounded-lg flex justify-normal items-center p-0.5 px-1 mr-2 mb-2 md:mr-0 md:mb-0 cursor-pointer hover:bg-gray-100"><ArchiveRestore size={16} className='mr-1' />Archive</span> {/* Adjust margin for different screen sizes */}
-                                <span className="font-medium border-2 text-red-500 rounded-lg flex justify-normal items-center p-0.5 px-1 mr-2 mb-2 md:mr-0 md:mb-0 cursor-pointer hover:bg-red-100 hover:border-red-100"><Trash size={16} color='red' className='mr-1' />Delete</span> {/* Adjust margin for different screen sizes */}
+                                <span className="text-gray-600 font-medium border-2 rounded-lg flex justify-normal items-center p-0.5 px-1 mr-2 mb-2 md:mr-0 md:mb-0 cursor-pointer hover:bg-gray-100"><ArchiveRestore size={16} className='mr-1' />Archive</span>
+                                <span className="font-medium border-2 text-red-500 rounded-lg flex justify-normal items-center p-0.5 px-1 mr-2 mb-2 md:mr-0 md:mb-0 cursor-pointer hover:bg-red-100 hover:border-red-100"><Trash size={16} color='red' className='mr-1' />Delete</span>
                                 <span className="text-gray-600 font-medium border-2 rounded-lg flex justify-normal items-center p-0.5 px-1 mr-2 mb-2 md:mr-0 md:mb-0 cursor-pointer hover:bg-gray-100">
                                     More
                                     <ChevronDown size={16} className='ml-1' />

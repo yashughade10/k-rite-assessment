@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      {/* <h1 className=' text-3xl text-red-400' >Hello All!</h1> */}
+    {/* Here we can add routing also, but as we need to navigate between links we didn't add */}
       <Home />
     </>
   )
