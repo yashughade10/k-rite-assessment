@@ -9,15 +9,6 @@ const ContentPage = () => {
     const [filteredProducts, setFilteredProducts] = useState(Product);
     const [sortedBy, setSortedBy] = useState(null);
 
-    // Data for the last row
-    const lastRow = [
-        <span className=' flex items-center ml-32' key="1"> <p className=' font-semibold mr-1'>10</p> count</span>,
-        <span className=' flex items-center ml-14' key="1"><span className=' mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
-        <span className=' flex items-center' key="2"><span style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
-        <span className=' flex items-center ml-10' key="3"><span className='mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
-        <span className=' flex items-center ml-8' key="4"><span className='mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
-        ""
-    ];
 
     // Function for search filter
     const handleSearchChange = (e) => {
@@ -29,6 +20,21 @@ const ContentPage = () => {
         });
         setFilteredProducts(filtered);
     };
+
+    // Count the items in the list
+    const countItems = () => {
+        return filteredProducts.length;
+    };
+
+    // Data for the last row
+    const lastRow = [
+        <span className=' flex items-center ml-32' key="1"> <p className=' font-semibold mr-1'>{countItems()}</p> count</span>,
+        <span className=' flex items-center ml-14' key="1"><span className=' mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
+        <span className=' flex items-center' key="2"><span style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
+        <span className=' flex items-center ml-10' key="3"><span className='mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
+        <span className=' flex items-center ml-8' key="4"><span className='mr-2' style={{ fontSize: '1.5em' }}>&#x2b;</span> Add Calculation</span>,
+        ""
+    ];
 
     // Sorting according to the alphabets (A-Z)
     const handleSort = () => {
