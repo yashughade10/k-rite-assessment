@@ -81,8 +81,8 @@ const ContentPage = () => {
 
     return (
         <>
-            <div class="p-4 pl-4 sm:ml-64 sm:pl-12">
-                <div class=" border-2 border-gray-200 rounded-lg dark:border-gray-200">
+            <div className="p-4 pl-4 sm:ml-64 sm:pl-12">
+                <div className=" border-2 border-gray-200 rounded-lg dark:border-gray-200">
 
                     {/* Header-1 */}
                     <div className="flex justify-between border-b rounded-t-lg items-center p-2 sm:p-3 md:p-3">
